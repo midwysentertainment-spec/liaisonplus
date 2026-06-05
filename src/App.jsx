@@ -180,19 +180,36 @@ function App() {
               <p>Utilise ce site comme vitrine pour montrer le concept, expliquer le besoin terrain et proposer un pilote à une structure médico-sociale.</p>
               <div className="contact-info">
                 <span><Mail size={17}/> contact@liaisonplus.fr</span>
-                <span><Phone size={17}/> 06 00 00 00 00</span>
+                <span><Phone size={17}/> 06 87 96 86 26</span>
                 <span><MapPin size={17}/> Île-de-France · France</span>
               </div>
             </div>
-            <form onSubmit={(e) => { e.preventDefault(); alert("Formulaire démo : à brancher à Formspree, EmailJS ou un backend avec honeypot/rate limiting avant mise en production."); }}>
-              <input className="hp" type="text" name="website" tabIndex="-1" autoComplete="off" aria-hidden="true" />
-              <label>Nom</label><input name="nom" placeholder="Votre nom" autoComplete="name" required />
-              <label>Email</label><input name="email" placeholder="votre@email.fr" type="email" autoComplete="email" required />
-              <label>Structure</label><input name="structure" placeholder="Nom de l’établissement" />
-              <label>Message</label><textarea name="message" rows="5" placeholder="Bonjour, je souhaite découvrir Liaison Plus..." required />
-              <p className="form-note">Les informations saisies servent uniquement à répondre à votre demande. En production, ce formulaire devra être relié à un service sécurisé avec protection anti-spam.</p>
-              <button className="btn primary large">Envoyer la demande <ArrowRight size={18} /></button>
-            </form>
+            <form
+  action="https://formspree.io/f/xnjyjada"
+  method="POST"
+>
+  <input className="hp" type="text" name="website" tabIndex="-1" autoComplete="off" aria-hidden="true" />
+
+  <label>Nom</label>
+  <input name="nom" placeholder="Votre nom" autoComplete="name" required />
+
+  <label>Email</label>
+  <input name="email" placeholder="votre@email.fr" type="email" autoComplete="email" required />
+
+  <label>Structure</label>
+  <input name="structure" placeholder="Nom de l’établissement" />
+
+  <label>Message</label>
+  <textarea name="message" rows="5" placeholder="Bonjour, je souhaite découvrir Liaison Plus..." required />
+
+  <p className="form-note">
+    Les informations saisies servent uniquement à répondre à votre demande.
+  </p>
+
+  <button className="btn primary large" type="submit">
+    Envoyer la demande <ArrowRight size={18} />
+  </button>
+</form>
           </section>
 
           <section className="legal-section" id="mentions-legales">
